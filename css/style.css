@@ -1,0 +1,67 @@
+:root {
+    --primary: #2243ff;
+    --secondary: #22ff7e;
+    --three: #22ffde;
+    --four: #eff83d;
+    --five: #ff49ea;
+    --six: #fe3535;
+    --seven: #8235fe;
+    --eight: #64bedf;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+	line-height: 1.48em;
+}
+
+.page {
+    background-color: black;
+    color: azure;
+    padding: 2.5%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.head-name {
+    background-color: var(--primary);
+    color: azure;
+    max-width: 85%;
+}
+
+.sticky {
+    display: block;
+    width: 7em;
+    height: 7em;
+    padding: 1px;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 85%;
+    color: black;
+}
+
+.sticky-1 {
+    background-color: var(--seven);
+}
+
+.sticky-2 {
+    background-color: var(--secondary);
+}
+
+.sticky-3 {
+    background-color: var(--three);
+}
+
+.sticky-4 {
+    background-color: var(--four);
+}
+
+.sticky-5 {
+    background-color: var(--five);
+}
+
