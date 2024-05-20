@@ -14,6 +14,7 @@ html, body {
     padding: 0;
     font-size: 13px;
 	line-height: 1.48em;
+    font-weight: normal;
 }
 
 .page {
@@ -32,6 +33,13 @@ a {
     max-width: 85%;
 }
 
+.big-sticky {
+    display: block;
+    width: 21em;
+    height: 21em;
+    padding: 3px;
+}
+
 .sticky {
     display: block;
     width: 7em;
@@ -43,6 +51,17 @@ a {
     text-decoration: none;
     font-size: 85%;
     color: black;
+}
+
+.insticky-link {
+    color: black;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.insticky-link:hover {
+    color: azure;
+    font-weight: bold;
 }
 
 .sticky-1 {
@@ -63,5 +82,25 @@ a {
 
 .sticky-5 {
     background-color: var(--five);
+}
+
+.sticky-6 {
+    background-color: var(--six);
+}
+
+.sticky-7 {
+    background-color: var(--primary);
+}
+
+.reserved {
+    background-color: black;
+    color: black;
+    transition: all 2s;
+}
+
+.reserved:hover {
+    background-color: #101010;
+    color: azure;
+    opacity: 0.6;
 }
 
