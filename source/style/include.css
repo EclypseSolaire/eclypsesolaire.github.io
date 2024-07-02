@@ -1,0 +1,246 @@
+
+:root {
+    --main-color: #4cf3ff;
+    --bg-color: #000000;
+    --bg-color-10: hsla(0, 0%, 0%, 0.1);
+    --bg-color-20: hsla(0, 0%, 0%, 0.2);
+    --bg-color-30: hsla(0, 0%, 0%, 0.3);
+    --bg-color-75: hsla(0, 0%, 0%, 0.75);
+}
+
+::selection {
+    background-color: var(--main-color);
+    color: #222222;
+}
+::-moz-selection {
+    background-color: var(--main-color);
+    color: #222222;
+}
+::-webkit-selection {
+    background-color: var(--main-color);
+    color: #222222;
+}
+
+@font-face {
+    font-family: AngelWish;
+    src: url("../font/angel_wish/Angel\ wish.otf");
+}
+
+@font-face {
+    font-family: Blackside2;
+    src: url("../font/blackside_2/Blackside.ttf");
+}
+
+@font-face {
+    font-family: Brushstrike;
+    src: url("../font/brushstrike/Brushstrike\ trial.ttf");
+}
+
+@font-face {
+    font-family: Vlavour;
+    src: url("../font/VLAVOUR.ttf");
+}
+
+@font-face {
+    font-family: DesirePro;
+    src: url("../font/DesirePro.otf");
+}
+
+a {
+    font-family: 'DesirePro';
+    text-decoration: none;
+    color: var(--main-color);
+    transition: all 500ms ease-in-out;
+}
+
+a:hover {
+    border-bottom: var(--main-color) 1px solid;
+}
+
+*,
+*:after,
+*:before {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    color: var(--main-color);
+    margin: 0;
+    letter-spacing: 0.5px;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    transition: 300ms all ease-in-out;
+}
+
+body main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main header .nav-container {
+    position: fixed;
+    top: 0;
+    background-color: var(--bg-color-75);
+    border-bottom: 1px solid var(--main-color);
+    width: 100%;
+    height: 6rem;
+    display: grid;
+    grid-template-columns: 22rem 1fr;
+}
+
+main header .nav-container a.logo {
+    border-right: 1px solid var(--main-color);
+    text-transform: uppercase;
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 4rem;
+    padding-top: 0.8rem;
+    transition: all 500ms ease-in-out;
+}
+
+main header .nav-container a.logo:hover {
+    background-color: var(--main-color);
+    color: black;
+    text-decoration: none;
+}
+
+main header .nav-container button.toggle-menu {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: var(--main-color);
+  }
+  @media (max-width: 62em) {
+    main header .nav-container button.toggle-menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 7rem;
+      margin-right: 0;
+      margin-left: auto;
+      width: 100%;
+    }
+  }
+  @media (max-width: 36em) {
+    main header .nav-container button.toggle-menu {
+      max-width: initial;
+      margin: auto;
+    }
+  }
+  main header .nav-container button.toggle-menu .line {
+    transition: 500ms;
+    transform-origin: center;
+    fill: var(--main-color);
+  }
+  main header .nav-container button.toggle-menu.active .top {
+    y: 50;
+    transform: rotate(-45deg);
+  }
+  main header .nav-container button.toggle-menu.active .bottom {
+    y: 50;
+    transform: rotate(45deg);
+  }
+  main header .nav-container button.toggle-menu.active .middle {
+    opacity: 0;
+  }
+  main header .nav-container .menu-content {
+    display: grid;
+    grid-template-columns: 1fr 26rem 20rem;
+    transition: all 300ms;
+    grid-template-areas: "nav social signup";
+  }
+  @media (max-width: 75em) {
+    main header .nav-container .menu-content {
+      grid-template-columns: 1fr 26rem;
+      grid-template-areas: "nav social";
+    }
+  }
+  @media (max-width: 62em) {
+    main header .nav-container .menu-content {
+      position: absolute;
+      opacity: 0;
+      right: -100%;
+      height: calc(100vh - 6rem);
+      background-color: var(--bg-color-75);
+      top: 6rem;
+      width: 100%;
+      grid-template-columns: 1fr;
+      align-items: center;
+      align-content: center;
+      gap: 3rem;
+      padding: 0 5rem;
+      grid-template-areas: "nav" "signup" "social";
+    }
+    main header .nav-container .menu-content.open {
+      right: 0;
+      opacity: 1;
+    }
+  }
+  main header .nav-container .menu-content nav {
+    border-right: 1px solid var(--main-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: nav;
+    padding-top: 0.8rem;
+  }
+  @media (max-width: 62em) {
+    main header .nav-container .menu-content nav {
+      flex-direction: column;
+      gap: 4rem;
+      border-right: none;
+      padding-top: initial;
+    }
+  }
+  main header .nav-container .menu-content nav a {
+    font-size: 2.7rem;
+    text-transform: uppercase;
+    line-height: 2.2rem;
+    transition: none;
+    border-bottom: 1px solid transparent;
+  }
+  @media (max-width: 36em) {
+    main header .nav-container .menu-content nav a {
+      font-size: 4rem;
+      line-height: 4rem;
+    }
+  }
+  main header .nav-container .menu-content nav a:hover {
+    border-bottom: 1px solid var(--main-color);
+  }
+  @media (max-width: 36em) {
+    main header .nav-container .menu-content nav a.nav-home {
+      display: none;
+    }
+  }
+  main header .nav-container .menu-content .social {
+    border-right: 1px solid var(--main-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: social;
+  }
+  @media (max-width: 75em) {
+    main header .nav-container .menu-content .social {
+      border-right: none;
+    }
+  }
